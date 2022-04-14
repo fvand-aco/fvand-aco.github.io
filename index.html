@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Glance</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  
+
+</head>
+<body>
+  <!-- Buttons -->
+  <button id="createWeatherBtn">New Weather</button>
+  <button id="createRSSBtn">New RSS Feed</button>
+  <button id="settingsBtn">Settings</button>
+  <button id="resetPositionBtn">Reset Positions</button>
+  
+  
+
+  <!-- Create Weather Modal -->
+  <div id="weather-modal" class="modal">
+    <!-- Weather Modal Content -->
+    <div class="weather-modal-content modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Create New Weather Widget</h2>
+      </div>
+      <div>
+        <input type="text" id="weather-search-text" placeholder="City, Country Code" style="border: 1px solid black;">
+        <button id="weather-search-submit"><i class="fa fa-search"></i></button>
+      </div>
+      <div id="citylist">
+        <form action="" id="citylist-form">
+        </form>
+      </div>
+      <div>
+        <button id="add-weather-widget">Add Weather Widget</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create RSS Modal -->
+  <div id="rss-modal" class="modal">
+    <!-- RSS Modal Content -->
+    <div class="rss-modal-content modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Create New RSS Feed Widget</h2>
+      </div>
+      <div>
+        <input type="text" id="rss-input" placeholder="RSS Link" style="border: 1px solid black;">
+      </div>
+      <div>
+        <button id="add-rss-widget">Add RSS Feed Widget</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Modal -->
+  <div id="settings-modal" class="modal">
+    <!-- RSS Modal Content -->
+    <div class="settings-modal-content modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Settings</h2>
+      </div>
+      <div>
+        <p>Prefered unit of measure:</p>
+        <form id="unit-selection">
+            <input type="radio" id="metric" name="unit" value="metric" class="preferedUnits">
+            <label for="metric">Metric</label><br>
+            <input type="radio" id="imperial" name="unit" value="imperial" class="preferedUnits">
+            <label for="imperial">Imperial</label><br>
+        </form><br>
+        <label for="maxRss">Maximum number of links in each RSS feed (between 1-20):</label><br>
+        <input type="text" id="maxRss" name="maxRss" style="border: 1px solid black;"><br><br>
+        <label for="refreshInterval">Refresh Interval (in minutes, between 15-60):</label><br>
+        <input type="text" id="refreshInterval" name="refreshInterval" style="border: 1px solid black;"><br><br>
+
+      </div>
+      <div>
+        <button id="save-settings">Save Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIV for the widgets -->
+  <div id="widget-div" class="widget-div">
+    
+  </div>
+
+  <noscript>
+    Your browser does not support JavaScript!
+  </noscript>
+  
+</body>
+<script src="feednami-client-v1.1.js"></script>
+<!-- https://static.sekandocdn.net/static/feednami/ -->
+<script src="app.js"></script>
+</html>
